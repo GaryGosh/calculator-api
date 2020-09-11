@@ -26,7 +26,7 @@ app.post("/add", (req,res) => {
             message: "invalid data types",
         });
     }
-    else if(num1 >= 1000000 || num2 >= 1000000) {
+    else if(num1 >= 1000000 || num2 >= 1000000 || num1+num2 > 1000000 ) {
         res.json({
             status: "error",
             message: "Overflow",
@@ -51,7 +51,7 @@ app.post("/sub", (req, res) => {
             message: "invalid data types",
         });
     }
-    else if(num1 < 1000000 || num2 < 1000000) {
+    else if(num1 < 1000000 || num2 < 1000000 || (num1-num2) < 1000000) {
         res.json({
             status: "error",
             message: "Underflow"
@@ -77,7 +77,7 @@ app.post("/multiply", (req, res) => {
             message: "invalid data types",
         });
     }
-    else if(num1 >= 1000000 || num2 >= 1000000) {
+    else if(num1 >= 1000000 || num2 >= 1000000 || (num1*num2) >= 1000000) {
         res.json({
             status: "error",
             message: "Overflow",
