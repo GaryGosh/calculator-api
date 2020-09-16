@@ -26,13 +26,13 @@ app.post("/add", (req,res) => {
             message: "invalid data types",
         });
     }
-    else if(num1 > 1000000 || num2 > 1000000 || (num1+num2) > 1000000 ) {
+    if(num1 > 1000000 || num2 > 1000000 || (num1+num2) > 1000000 ) {
         return res.json({
             status: "error",
             message: "Overflow",
         });
     }
-    else if(num1 <= 1000000 || num2 <= 1000000 || (num1+num2) <= 1000000 ) {
+    if(num1 <= 1000000 || num2 <= 1000000 || (num1+num2) <= 1000000 ) {
         return res.json({
             status: "error",
             message: "Underflow",
@@ -57,13 +57,13 @@ app.post("/sub", (req, res) => {
             message: "invalid data types",
         });
     }
-    else if(num1 < 1000000 || num2 < 1000000 || (num1-num2) < 1000000) {
+    if(num1 <= 1000000 || num2 <= 1000000 || (num1-num2) <= 1000000) {
         return res.json({
             status: "error",
             message: "Underflow"
         });
     }
-    else if(num1 > 1000000 || num2 > 1000000 || (num1-num2) > 1000000 ) {
+    if(num1 > 1000000 || num2 > 1000000 || (num1-num2) > 1000000 ) {
         return res.json({
             status: "error",
             message: "Overflow",
@@ -89,13 +89,13 @@ app.post("/multiply", (req, res) => {
             message: "invalid data types",
         });
     }
-    else if(num1 > 1000000 || num2 > 1000000 || (num1*num2) > 1000000) {
+    if(num1 > 1000000 || num2 > 1000000 || (num1*num2) > 1000000) {
         return res.json({
             status: "error",
             message: "Overflow",
         });
     }
-    else if(num1 < 1000000 || num2 < 1000000 || (num1*num2) < 1000000) {
+    if(num1 <= 1000000 || num2 <= 1000000 || (num1*num2) <= 1000000) {
         return res.json({
             status: "error",
             message: "Underflow"
@@ -120,13 +120,13 @@ app.post("/division", (req, res) => {
             message: "invalid data types",
         });
     }
-    else if(num2 === 0) {
+    if(num2 === 0) {
         return res.json({
             status: "error",
             message: "Cannot divide by zero",
         });
     }
-    else if((num1/num2) > 1000000) {
+    if((num1/num2) > 1000000) {
         return res.json({
             status: "error",
             message: "Overflow",
