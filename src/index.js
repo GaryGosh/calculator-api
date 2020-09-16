@@ -22,7 +22,7 @@ app.post("/add", (req,res) => {
 
     if(typeof num1 === "string" || typeof num2 === "string") {
         return res.json({
-            status: "error",
+            status: "failure",
             message: "Invalid data types",
         });
     }
@@ -42,7 +42,7 @@ app.post("/add", (req,res) => {
         const sum = num1 + num2;
         return res.json({
             status: "success",
-            message: "the sum of given two number",
+            message: "the sum of given two numbers",
             sum: `${sum}`,
         })
     }
