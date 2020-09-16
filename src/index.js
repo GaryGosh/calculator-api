@@ -95,12 +95,12 @@ app.post("/multiply", (req, res) => {
             message: "Overflow",
         });
     }
-    if(num1 <= 1000000 || num2 <= 1000000 || (num1*num2) <= 1000000) {
+    /* if(num1 <= 1000000 || num2 <= 1000000 || (num1*num2) <= 1000000) {
         return res.json({
             status: "error",
             message: "Underflow"
         });
-    }
+    } */
     else {
         const sum = num1 * num2;
         return res.json({
@@ -126,12 +126,12 @@ app.post("/divide", (req, res) => {
             message: "Cannot divide by zero",
         });
     }
-    if((num1/num2) > 1000000) {
+    /* if((num1/num2) > 1000000) {
         return res.json({
             status: "error",
             message: "Overflow",
         })
-    }
+    } */
     else {
         const sum = num1 / num2;
         return res.json({
