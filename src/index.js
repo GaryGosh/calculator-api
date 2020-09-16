@@ -51,31 +51,26 @@ app.post("/sub", (req, res) => {
             message: "Invalid data types",
         });
     }
-    if(num1 <= 1000000 || num2 <= 1000000 || (num1-num2) <= 1000000) {
+    else if(num1 < -1000000 || num2 < -1000000 || (num1-num2) < -1000000) {
         return res.json({
             status: "error",
             message: "Underflow"
         });
     }
-    /* if(num1 > 1000000 || num2 > 1000000 || (num1-num2) > 1000000 ) {
-        return res.json({
-            status: "error",
-            message: "Overflow",
-        });
-    } */
     else {
-        const sum = num1 - num2;
+        let difference = num1 - num2;
 
         return res.json({
             status: "success",
             message: "the difference of given two number",
-            sum: `${sum}`
+            difference
         });
     }
 });
 
 app.post("/multiply", (req, res) => {
     const {num1, num2} = req.body;
+    let result = num1 * num2;
 
     if(typeof num1 === "string" || typeof num2 === "string") {
         return res.json({
@@ -83,24 +78,17 @@ app.post("/multiply", (req, res) => {
             message: "Invalid data types",
         });
     }
-    if(num1 > 1000000 || num2 > 1000000 || (num1*num2) > 1000000) {
+    else if(result > 1000000) {
         return res.json({
             status: "error",
             message: "Overflow",
         });
     }
-    /* if(num1 <= 1000000 || num2 <= 1000000 || (num1*num2) <= 1000000) {
-        return res.json({
-            status: "error",
-            message: "Underflow"
-        });
-    } */
     else {
-        const sum = num1 * num2;
         return res.json({
             status: "success",
             message: "The product of given numbers",
-            sum: `${sum}`
+            result
         });
     }
 });
@@ -120,18 +108,12 @@ app.post("/divide", (req, res) => {
             message: "Cannot divide by zero",
         });
     }
-    /* if((num1/num2) > 1000000) {
-        return res.json({
-            status: "error",
-            message: "Overflow",
-        })
-    } */
     else {
-        const sum = num1 / num2;
+        let result = num1 / num2;
         return res.json({
             status: "success",
             message: "The division of given numbers",
-            sum: `${sum}`
+            result
         });
     }
 });
