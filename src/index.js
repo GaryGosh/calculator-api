@@ -26,7 +26,7 @@ app.post("/add", (req,res) => {
             message: "Invalid data types",
         });
     }
-    if(num1 > 1000000 || num2 > 1000000 || (num1+num2) > 1000000 ) {
+    else if(num1 > 1000000 || num2 > 1000000 || (num1+num2) > 1000000 ) {
         return res.json({
             status: "error",
             message: "Overflow",
@@ -37,7 +37,7 @@ app.post("/add", (req,res) => {
         return res.json({
             status: "success",
             message: "the sum of given two numbers",
-            sum: `${sum}`,
+            sum
         })
     }
 });
