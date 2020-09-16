@@ -23,7 +23,7 @@ app.post("/add", (req,res) => {
     if(typeof num1 === "string" || typeof num2 === "string") {
         return res.json({
             status: "error",
-            message: "invalid data types",
+            message: "Invalid data types",
         });
     }
     if(num1 > 1000000 || num2 > 1000000 || (num1+num2) > 1000000 ) {
@@ -32,12 +32,12 @@ app.post("/add", (req,res) => {
             message: "Overflow",
         });
     }
-    if(num1 <= 1000000 || num2 <= 1000000 || (num1+num2) <= 1000000 ) {
+    /* if(num1 <= 1000000 || num2 <= 1000000 || (num1+num2) <= 1000000 ) {
         return res.json({
             status: "error",
             message: "Underflow",
         });
-    }
+    } */
     else {
         const sum = num1 + num2;
         return res.json({
@@ -51,10 +51,10 @@ app.post("/add", (req,res) => {
 app.post("/sub", (req, res) => {
     const { num1, num2 } = req.body;
 
-    if(typeof num1 === "String" || typeof num2 === "string") {
+    if(typeof num1 === "string" || typeof num2 === "string") {
         return res.json({
             status: "error",
-            message: "invalid data types",
+            message: "Invalid data types",
         });
     }
     if(num1 <= 1000000 || num2 <= 1000000 || (num1-num2) <= 1000000) {
@@ -63,12 +63,12 @@ app.post("/sub", (req, res) => {
             message: "Underflow"
         });
     }
-    if(num1 > 1000000 || num2 > 1000000 || (num1-num2) > 1000000 ) {
+    /* if(num1 > 1000000 || num2 > 1000000 || (num1-num2) > 1000000 ) {
         return res.json({
             status: "error",
             message: "Overflow",
         });
-    }
+    } */
     else {
         const sum = num1 - num2;
 
@@ -86,7 +86,7 @@ app.post("/multiply", (req, res) => {
     if(typeof num1 === "string" || typeof num2 === "string") {
         return res.json({
             status: "error",
-            message: "invalid data types",
+            message: "Invalid data types",
         });
     }
     if(num1 > 1000000 || num2 > 1000000 || (num1*num2) > 1000000) {
@@ -111,13 +111,13 @@ app.post("/multiply", (req, res) => {
     }
 });
 
-app.post("/division", (req, res) => {
+app.post("/divide", (req, res) => {
     const { num1, num2 } = req.body;
 
     if(typeof num1 === "string" || typeof num2 === "string") {
         return res.json({
             status: "error",
-            message: "invalid data types",
+            message: "Invalid data types",
         });
     }
     if(num2 === 0) {
