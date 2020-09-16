@@ -47,7 +47,7 @@ app.post("/sub", (req, res) => {
 
     if(typeof num1 === "string" || typeof num2 === "string") {
         return res.json({
-            status: "error",
+            status: "failure",
             message: "Invalid data types",
         });
     }
@@ -62,7 +62,7 @@ app.post("/sub", (req, res) => {
 
         return res.json({
             status: "success",
-            message: "the difference of given two number",
+            message: "the difference of given two numbers",
             difference
         });
     }
